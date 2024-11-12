@@ -31,6 +31,12 @@ jobs:
         with:
           fetch-depth: 0
       
+      - name: Enable Corepack
+        run: corepack enable
+          
+      - name: Prepare Yarn
+        run: corepack prepare yarn@4.4.0 --activate
+
       # Set up Node.js environment
       - name: Setup Node
         uses: actions/setup-node@v3
