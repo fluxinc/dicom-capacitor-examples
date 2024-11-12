@@ -1,0 +1,71 @@
+# Name of the GitHub Actions workflow
+name: Deploy VitePress site to Pages
+
+# Defines when the workflow will run
+on:
+  # Triggers on push events to main branch
+  push:
+    branches: [master]
+  # Allows manual triggering of the workflow
+  workflow_dispatch:
+
+# Sets required permissions
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Ensures only one deployment happens at a time
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  # Build job
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # Check out the repository code
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      
+      # Set up Node.js environment
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: yarn
+      
+      # Configure GitHub Pages
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+      
+      # Install project dependencies
+      - name: Install dependencies
+        run: yarn install
+      
+      # Build the VitePress site
+      - name: Build
+        run: yarn docs:build
+      
+      # Upload the built site as an artifact
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: docs/.vitepress/dist
+
+  # Deploy job
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    runs-on: ubuntu-latest
+    name: Deploy
+    steps:
+      # Deploy the built site to GitHub Pages
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
