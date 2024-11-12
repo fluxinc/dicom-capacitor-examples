@@ -4,7 +4,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "DICOM Capacitor Documentation",
   description: "Documentation for DICOM Capacitor",
-  base: '/docs/',
+  base: '/dicom-capacitor-docs/',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
