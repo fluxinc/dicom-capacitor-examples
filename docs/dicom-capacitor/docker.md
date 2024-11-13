@@ -20,3 +20,7 @@ services:
       - ./cache:/cache
       - /var/run/docker.sock:/var/run/docker.sock
 ```
+
+### Configuration
+
+Capacitor accepts overrides via environment variables.  The following environment variables are supported:

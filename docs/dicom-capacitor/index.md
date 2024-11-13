@@ -90,39 +90,3 @@ services:
 This document will assume you're using the Windows-specific installer and binaries. Please contact us to learn more
 about other installation methods and platforms.
 
-
-## Uninstallation
-
-To uninstall the complete DICOM Capacitor application, follow these steps:
-
-1. Open Add/Remove Programs (Start - Run - `appwiz.cpl`)
-2. Locate DICOM Capacitor in the list of installed programs
-3. Click `Uninstall`
-
-Alternatively, you can use the `sc` command-line tool to uninstall the service:
-
-```cmd
-sc delete "DICOMCapacitorService"
-```
-
-## Upgrading
-
-To upgrade DICOM Capacitor, run the installer for the new version.  The installer will automatically stop the service,
-upgrade the files, and restart the service.  We design our installers to be as seamless as possible, so you should
-not need to make any changes to your configuration files.
-
-Because Capacitor is semi-stateless, it is possible to upgrade from any version to any other version without losing
-data.  Capacitor will automatically pick up where it left off, and continue processing data as before.
-
-## Support
-
-If you have any questions or need assistance, please contact Flux Inc at:
-
-Web. https://fluxinc.co/support
-Phone. +1 (470) 890-1007
-Email. support@fluxinc.co
-
-## License
-
-DICOM Capacitor is licensed under the Flux Inc. End User License Agreement.
-Please see the `LICENSE.md` file for more information and licenses for included libraries.
