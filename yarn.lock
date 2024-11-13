@@ -1205,15 +1205,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dicom-capacitor-docs@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "dicom-capacitor-docs@workspace:."
-  dependencies:
-    vitepress: "npm:^1.5.0"
-    vue: "npm:^3.5.12"
-  languageName: unknown
-  linkType: soft
-
 "eastasianwidth@npm:^0.2.0":
   version: 0.2.0
   resolution: "eastasianwidth@npm:0.2.0"
@@ -1358,6 +1349,15 @@ __metadata:
   checksum: 10c0/160456d2d647e6019640bd07111634d8c353038d9fa40176afb7cd49b0548bdae83b56d05e907c2cce2300b81cae35d800ef92fefb9d0208e190fa3b7d6bb579
   languageName: node
   linkType: hard
+
+"flux-docs@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "flux-docs@workspace:."
+  dependencies:
+    vitepress: "npm:^1.5.0"
+    vue: "npm:^3.5.12"
+  languageName: unknown
+  linkType: soft
 
 "focus-trap@npm:^7.6.0":
   version: 7.6.1
