@@ -41,11 +41,11 @@ export default defineConfig({
               },
               {
                 text: "Manipulating the Cache",
-                link: "/dicom-capacitor/manipulating-the-cache",
+                link: "/dicom-capacitor/cache",
               },
               {
                 text: "Interrogating the Logs",
-                link: "/dicom-capacitor/interrogating-the-logs",
+                link: "/dicom-capacitor/logs",
               },
               {
                 text: "Uninstallation",
