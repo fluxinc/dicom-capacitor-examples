@@ -37,7 +37,7 @@ export default defineConfig({
               },
               {
                 text: "Starting and Stopping the Service",
-                link: "/dicom-capacitor/starting-and-stoppping",
+                link: "/dicom-capacitor/starting-and-stopping",
               },
               {
                 text: "Manipulating the Cache",
