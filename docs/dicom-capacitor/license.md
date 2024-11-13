@@ -4,51 +4,42 @@ Copyright (c) 2018-2024 Flux, Inc. All rights reserved.
 
 ## License Grant
 
-You are granted a limited, non-exclusive, non-transferable, revocable license to use this **demonstration** copy of 
-DICOM Capacitor solely for non-clinical, evaluation, and testing purposes. This license is subject to the terms and 
-conditions of the Flux Inc. End User License Agreement.
+You are granted a limited, non-exclusive, non-transferable, revocable license to use this **demonstration** copy of DICOM Capacitor for:
+
+1. Non-clinical evaluation and testing purposes
+2. Educational use by students and faculty members at accredited educational institutions
+
+This license is subject to the terms and conditions of the Flux Inc. End User License Agreement.
 
 ## Restrictions
 
 1. You may not use this software for any clinical, diagnostic, or patient care purposes.
-2. You may not redistribute, sublicense, sell, lease, or transfer this software or any portion of it without the 
-     express written consent of Flux, Inc.
+2. You may not redistribute, sublicense, sell, lease, or transfer this software or any portion of it without the express written consent of Flux, Inc.
 3. You may not reverse engineer, decompile, or disassemble the software.
 
 ## No Warranty
 
-THIS SOFTWARE IS PROVIDED "AS IS" AND WITHOUT ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE 
-IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+THIS SOFTWARE IS PROVIDED "AS IS" AND WITHOUT ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 
 ## Limitation of Liability
 
-IN NO EVENT SHALL FLUX, INC., ITS AFFILIATES, OR ITS LICENSORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, 
-EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF 
-USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, 
-STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN 
-IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+IN NO EVENT SHALL FLUX, INC., ITS AFFILIATES, OR ITS LICENSORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 ## Indemnification
 
-You agree to indemnify, defend, and hold harmless Flux, Inc. and its affiliates from and against any and all claims, 
-liabilities, damages, losses, costs, expenses, or fees (including reasonable attorneys' fees) that such parties may 
-incur as a result of or arising from your use or misuse of the Software.
+You agree to indemnify, defend, and hold harmless Flux, Inc. and its affiliates from and against any and all claims, liabilities, damages, losses, costs, expenses, or fees (including reasonable attorneys' fees) that such parties may incur as a result of or arising from your use or misuse of the Software.
 
 ## Termination
 
-This license is effective until terminated. Your rights under this license will terminate automatically without notice 
-from Flux, Inc. if you fail to comply with any term(s) of this license.
+This license is effective until terminated. Your rights under this license will terminate automatically without notice from Flux, Inc. if you fail to comply with any term(s) of this license.
 
 ## Governing Law
 
-This license shall be governed by and construed in accordance with the laws of the State of Texas, without giving effect 
-to any principles of conflicts of law.
+This license shall be governed by and construed in accordance with the laws of the State of Texas, without giving effect to any principles of conflicts of law.
 
 ## Entire Agreement
 
-This license constitutes the entire agreement between you and Flux, Inc. relating to the Software and supersedes all 
-prior or contemporaneous oral or written communications, proposals, and representations with respect to the Software or 
-any other subject covered by this license.
+This license constitutes the entire agreement between you and Flux, Inc. relating to the Software and supersedes all prior or contemporaneous oral or written communications, proposals, and representations with respect to the Software or any other subject covered by this license.
 
 ## Third-Party Licenses
 
@@ -59,7 +50,7 @@ DICOM Capacitor includes third-party software components.  The licenses for thes
 Unless otherwise specified, the DCMTK software package has the
 following copyright:
 
-```
+```text
 /*
 *  Copyright (C) 1994-2004, OFFIS
 *
@@ -93,7 +84,7 @@ dcmjpeg/libijg12 and dcmjpeg/libijg16.  This toolkit is covered by the
 following copyright.  The original README file for the Independent JPEG
 Group Toolkit is located in dcmjpeg/docs/ijg_readme.txt.
 
-```
+```text
 /*
 *  The authors make NO WARRANTY or representation, either express or implied,
 *  with respect to this software, its quality, accuracy, merchantability, or
@@ -132,10 +123,9 @@ Group Toolkit is located in dcmjpeg/docs/ijg_readme.txt.
 */
 ```
 
-
 #### OpenJPEG JPEG 2000 codec (from license.txt) ----
 
-```
+```text
 /*
 * Copyright (c) 2002-2007, Communications and Remote Sensing Laboratory, Universite catholique de Louvain (UCL), Belgium
 * Copyright (c) 2002-2007, Professor Benoit Macq
@@ -170,7 +160,7 @@ Group Toolkit is located in dcmjpeg/docs/ijg_readme.txt.
 
 #### CharLS JPEG-LS codec (from License.txt) ----
 
-```
+```text
 Copyright (c) 2007-2009, Jan de Vaan
 All rights reserved.
 
@@ -202,7 +192,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #### Unity.IO.Compression (from LICENSE.TXT and PATENTS.TXT) ----
 
-```
+```text
 The MIT License (MIT)
 
 Copyright (c) Microsoft Corporation
@@ -275,7 +265,7 @@ that run on .NET Framework or other .NET Runtimes.
 
 #### Nito.AsyncEx (from LICENSE.TXT)
 
-```
+```text
 The MIT License (MIT)
 
 Copyright (c) 2014 StephenCleary
