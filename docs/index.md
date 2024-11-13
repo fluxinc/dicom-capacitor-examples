@@ -3,8 +3,8 @@
 layout: home
 
 hero:
-  name: "DICOM Capacitor Documentation"
-  text: "Documentation for DICOM Capacitor"
+  name: "Flux Product Documentation"
+  text: "Documentation for DICOM Capacitor, DICOM Printer, and our other products"
   tagline: My great project tagline
   actions:
     - theme: brand
