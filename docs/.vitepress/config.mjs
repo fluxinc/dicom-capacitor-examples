@@ -9,7 +9,7 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'DICOM Capacitor', link: '/dicom-capacitor' }
+      { text: 'DICOM Capacitor', link: '/dicom-capacitor' },
       { text: 'DICOM Printer', link: '/dicom-printer-2' }
     ],
 
