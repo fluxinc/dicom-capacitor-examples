@@ -1,4 +1,4 @@
-# dicom-capacitor-docs
+# Flux Public Docs
 
 Documentation site for DICOM Capacitor plugin built with VitePress.
 
