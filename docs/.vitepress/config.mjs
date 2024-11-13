@@ -31,11 +31,18 @@ export default defineConfig({
               { text: "Docker", link: "/dicom-capacitor/docker" },
               { text: "Command Line", link: "/dicom-capacitor/command-line" },
               {
-                text: "Configuration", link: "/dicom-capacitor/configuration",
+                text: "Configuration",
+                link: "/dicom-capacitor/configuration",
                 items: [
-                  { text: "config.yml", link: "/dicom-capacitor/configuration#config-yml" },
-                  { text: "nodes.yml", link: "/dicom-capacitor/configuration#nodes-yml" },
-                ]
+                  {
+                    text: "config.yml",
+                    link: "/dicom-capacitor/configuration#config-yml",
+                  },
+                  {
+                    text: "nodes.yml",
+                    link: "/dicom-capacitor/configuration#nodes-yml",
+                  },
+                ],
               },
               {
                 text: "Starting and Stopping the Service",
@@ -56,6 +63,7 @@ export default defineConfig({
               { text: "Upgrading", link: "/dicom-capacitor/upgrading" },
               { text: "Support", link: "/dicom-capacitor/support" },
               { text: "License", link: "/dicom-capacitor/license" },
+              { text: "Examples", link: "/dicom-capacitor/examples" },
             ],
           },
           { text: "DICOM Printer 2", link: "/dicom-printer-2" },
