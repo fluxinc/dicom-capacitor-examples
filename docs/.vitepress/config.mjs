@@ -6,6 +6,7 @@ export default defineConfig({
   description: "Documentation for our Products",
   base: "/",
   themeConfig: {
+    logo: "/logo.svg",
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: "Home", link: "/" },

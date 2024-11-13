@@ -8,7 +8,7 @@
 - 1 GB of free disk space
 - 2 GHz or faster, x64 or arm64, processor
 
-## Installation
+## Windows Installation
 
 1. Download the latest version of DICOM Capacitor from the [Flux Website](#)
 2. Run the installer
@@ -20,3 +20,6 @@
     - `nodes.yml` - Specifies the nodes that DICOM Capacitor will use to send and receive DICOM data
     - `config.yml` - Specifies the settings for DICOM Capacitor
 
+## Docker Installation
+
+Refer to the [Docker Operations](/dicom-capacitor/docker) page for instructions on how to run DICOM Capacitor in a Docker container.
