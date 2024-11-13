@@ -8,18 +8,16 @@ hero:
   tagline: My great project tagline
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: DICOM Capacitor
+      link: /dicom-capacitor
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: DICOM Printer 2
+      link: /dicom-printer-2
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: DICOM Capacitor
+    details: Our multi-plaform programmable DICOM store-forward router
+  - title: DICOM Printer 2
+    details: Tried and trusted print, image, and PDF DICOM processor.
 ---
 
