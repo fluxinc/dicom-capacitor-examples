@@ -3,21 +3,22 @@ import { defineConfig } from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "Flux Docs",
-  description: "Documentation for Flux Products",
+  description: "Documentation for our Products",
   base: "/",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' }
+      { text: 'DICOM Capacitor', link: '/dicom-capacitor' }
+      { text: 'DICOM Printer', link: '/dicom-printer-2' }
     ],
 
     sidebar: [
       {
-        text: 'Examples',
+        text: 'Products',
         items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
+          { text: 'DICOM Capacitor', link: '/dicom-capacitor' },
+          { text: 'DICOM Printer 2', link: '/dicom-printer-2' }
         ]
       }
     ],
