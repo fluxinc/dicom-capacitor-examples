@@ -2,8 +2,8 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "DICOM Capacitor Documentation",
-  description: "Documentation for DICOM Capacitor",
+  title: "Flux Docs",
+  description: "Documentation for Flux Products",
   base: "/",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
