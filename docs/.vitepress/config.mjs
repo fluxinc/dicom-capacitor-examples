@@ -43,15 +43,22 @@ export default defineConfig({
                     link: "/dicom-capacitor/configuration#nodes-yml",
                   },
                   {
-                    text: "Filters", link: "/dicom-capacitor/filters",
+                    text: "Filters",
+                    link: "/dicom-capacitor/filters",
                     items: [
                       {
-                        text: "Route", link: "/dicom-capacitor/filters#route",
+                        text: "Filter Conditions",
+                        link: "/dicom-capacitor/filters/conditions",
                       },
                       {
-                        text: "Mutate", link: "/dicom-capacitor/filters#compression",
+                        text: "Route",
+                        link: "/dicom-capacitor/filters/route",
                       },
-                    ]
+                      {
+                        text: "Mutate",
+                        link: "/dicom-capacitor/filters/mutate",
+                      },
+                    ],
                   },
                 ],
               },

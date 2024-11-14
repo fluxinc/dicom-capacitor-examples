@@ -1,4 +1,4 @@
-# Route
+# Route Filter
 
 Capacitor's route fitler lets you route incoming DICOM data to different destinations (or disk) based on configurable criteria.
 In order to enable the route filter, you must add the `route` filter to the `filters` section of your `config.yml` file.
