@@ -1,6 +1,7 @@
 # Route Filter
 
-Capacitor's route fitler lets you route incoming DICOM data to different destinations (or disk) based on configurable criteria.
+The route filter lets you route incoming DICOM data to different destinations (or disk) based on configurable criteria.
+
 In order to enable the route filter, you must add the `route` filter to the `filters` section of your `config.yml` file.
 
 ```yaml
@@ -19,7 +20,59 @@ filters: route
 
 Once enabled, the route filter will use the `routings.yml` file to determine which destinations to route incoming DICOM data to.  If this file is missing or invalid DICOM Capacitor will halt with an error.
 
-## Routing Example
+## Route Components
+
+Each route component is defined as follows:
+
+- `AeTitles`: (Optional) The AE destination AE title to which this route applies.
+- `Conditions`: (Optional) A list of conditions that must be met for this route to apply.
+- `Actions`: (Required) A list of actions to take when this route applies.
+
+### AeTitles
+
+The `AeTitles` field is an optional list of AE titles that this route applies to.
+
+- If this field is not provided, the route will apply to all AE titles.
+- If this field is provided, the route will only apply to AE titles that match one of the provided values.
+
+### Conditions
+
+The `Conditions` field is an optional list of conditions that must be met for this route to apply.   If this field is not provided, the route will apply to all incoming DICOM data (provided that the `AeTitles` field is either not present, or is present and matches the incoming DICOM data).
+
+Conditions are a shared concept between the `route` and `mutate` filters, and are described in their own [Conditions](./conditions) page.
+
+### Actions
+
+The actions field is required, and must be a list of one or more actions to take when this route applies.
+
+Each action component is defined as follows:
+
+- `Description`:  A description of the action that will appear in the logs.
+- `Type`:  The type of action to take.  Possible values are:
+  - `add_destination`: Adds the incoming DICOM data to the specified destination AE title
+  - `save_file`: Saves the incoming DICOM data to disk
+  - `drop`: Drops the incoming DICOM data.
+- `RemoveOriginal`: (Optional, used in the `save_file` action only)  
+  Determines whether the incoming DICOM data should be removed from the cache after the action is taken.  The default value is `false`.
+- `Target`: (Requred for the `add_destination` and `save_file` actions)  
+  The AE title to which the incoming DICOM data should be sent, or the path to which the dataset should be saved (see [Save File Parameters](#save-file-parameters)).
+
+#### Save File Parameters
+
+The `save_file` action type will save the incoming DICOM data to disk.  The `Target` field is required, and must be a valid path on the local filesystem.  Additinallly, the `Target` may contain placeholders that will be replaced with the incoming DICOM data.  Placeholders are specified as `#{tag}`, where `tag` is the DICOM tag to be replaced.
+
+For example the following action will save the incoming DICOM data to disk, replacing the `#{8,50}` placeholder with the incoming DICOM data's AccesionNumber (0008,0050) attribute:
+
+```yaml
+- Description: Save incoming DICOM data to disk
+  Type: save_file
+  Target: /path/to/incoming/#{8,50}/
+  RemoveOriginal: false
+```
+
+Again, the RemoveOriginal field is optional, and defaults to `false` (we include it here for clarity). We frequently use this pattern to "stash" incoming DICOM data for additional testing or analysis.
+
+## Routing Examples
 
 An example `routings.yml` file is shown below:
 
@@ -43,7 +96,6 @@ An example `routings.yml` file is shown below:
       Type: save_file
       Target: "C:/dicom/#{8,50}/#{8,18}.dcm"
 
-
 # Route all instances with a comment that contains 
 # the word "URGENT" to PACS_2
 - AeTitles:
@@ -56,64 +108,6 @@ An example `routings.yml` file is shown below:
       Target: MRPACS
       RemoveOriginal: true
 ```
-
-## Route Components
-
-Each route component is defined as follows:
-
-- `AeTitles`: (Optional) The AE destination AE title to which this route applies.
-- `Conditions`: (Optional) A list of conditions that must be met for this route to apply.
-- `Actions`: (Required) A list of actions to take when this route applies.
-
-### AeTitles
-
-The `AeTitles` field is an optional list of AE titles that this route applies to.
-
-- If this field is not provided, the route will apply to all AE titles.
-- If this field is provided, the route will only apply to AE titles that match one of the provided values.
-
-### Conditions
-
-The `Conditions` field is an optional list of conditions that must be met for this route to apply.  If this field is not provided, the route will apply to all incoming DICOM data (provided that the `AeTitles` field is either not present, or is present and matches the incoming DICOM data).
-
-Each condition component is defined as follows:
-
-- `Tag`: The DICOM tag to match.
-- `MatchExpression`: The DICOM match expression to match.  Expressions can be specified either as a string or as a regular expression.  When specifying regular expressions, remember to escape any special characters.
-
-### Actions
-
-The actions field is required, and must be a list of one or moreactions to take when this route applies.
-
-Eacg action component is defined as follows:
-
-- `Description`:  A description of the action that will appear in the logs.
-- `Type`:  The type of action to take.  Possible values are:
-  - `add_destination`: Adds the incoming DICOM data to the specified destination AE title
-  - `save_file`: Saves the incoming DICOM data to disk
-  - `drop`: Drops the incoming DICOM data.
-- `RemoveOriginal`: (Optional)  
-  Determines whether the incoming DICOM data should be removed from the cache after the action is taken.  The default value is `false`.
-- `Target`: (Conditinally Requred)  
-  The AE title to which the incoming DICOM data should be sent or the path to which the dataset should be saved.  This field is required if the `Type` field is `add_destination` or `save_file`.
-
-#### Save File Parameters
-
-The `save_file` action type will save the incoming DICOM data to disk.  The `Target` field is required, and must be a valid path on the local filesystem.  Additinallly, the `Target` may contain placeholders that will be replaced with the incoming DICOM data.  Placeholders are specified as `#{tag}`, where `tag` is the DICOM tag to be replaced.
-
-For example the following action will save the incoming DICOM data to disk, replacing the `#{8,50}` placeholder with the incoming DICOM data's AccesionNumber (0008,0050) attribute:
-
-```yaml
-- Description: Save incoming DICOM data to disk
-  Type: save_file
-  Target: /path/to/incoming/#{8,50}/
-  RemoveOriginal: false
-```
-
-Again, the RemoveOriginal field is optional, and defaults to `false` (we include it here for clarity). We frequently use this pattern to "stash" incoming DICOM data for additional testing or analysis.
-
-## Route Examples
-
 
 ### Example 1: Stash incoming DICOM data to disk
 
