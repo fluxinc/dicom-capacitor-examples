@@ -26,8 +26,19 @@ Each sort component is defined as follows:
   - qr_find_query
   - qr_find_result
 
+### Actions
 
-## Sort Example
+The actions field is required, and must be a list of one or more actions to take when each sort applies.
+
+Each action component is defined as follows:
+
+- `Description`:  A description of the action that will appear in the logs.
+- `Type`:  The type of action to take. This must be `sort`.
+- `SortTag`: (Required) The DICOM tag to sort by.
+- `SortType`: (Required) The type of data to sort. This must be either `integer` or `string`.
+- `SortDirection`: (Required) The direction to sort. This must be either `asc` or `desc`.
+
+## Sorting Examples
 
 An example `sortings.yml` file is shown below:
 
@@ -57,15 +68,3 @@ An example `sortings.yml` file is shown below:
       SortType: integer
       SortDirection: asc
 ```
-
-### Actions
-
-The actions field is required, and must be a list of one or more actions to take when each sort applies.
-
-Each action component is defined as follows:
-
-- `Description`:  A description of the action that will appear in the logs.
-- `Type`:  The type of action to take. This must be `sort`.
-- `SortTag`: (Required) The DICOM tag to sort by.
-- `SortType`: (Required) The type of data to sort. This must be either `integer` or `string`.
-- `SortDirection`: (Required) The direction to sort. This must be either `asc` or `desc`.
