@@ -58,6 +58,10 @@ export default defineConfig({
                         text: "Mutate",
                         link: "/dicom-capacitor/filters/mutate",
                       },
+                      {
+                        text: "Sort",
+                        link: "/dicom-capacitor/filters/sort",
+                      }
                     ],
                   },
                 ],
