@@ -20,6 +20,69 @@
     - `nodes.yml` - Specifies the nodes that DICOM Capacitor will use to send and receive DICOM data
     - `config.yml` - Specifies the settings for DICOM Capacitor
 
+
+## Command Line Installation
+Install DICOM Capacitor as a Windows service:
+```bash
+DICOMCapacitorService.exe --install
+```
+
+### Custom Path Installation 
+Install with a specific base directory:
+```bash
+DICOMCapacitorService.exe --install --path "C:\CustomPath\DICOMCapacitor"
+```
+
+### Uninstall Service
+Remove the Windows service:
+```bash
+DICOMCapacitorService.exe --uninstall
+```
+For more options, see [Command Line Options](/dicom-capacitor/command-line.md)
+## Service Management
+
+### Windows Service Controls
+- Start: `net start DICOMCapacitorService`
+- Stop: `net stop DICOMCapacitorService`
+- Restart: `DICOMCapacitorService.exe --restart-service [ProcessID]`
+
+### Service Components
+During startup, the service initializes:
+- Storage SCP (DICOM storage provider)
+- Worklist SCP (DICOM worklist provider)
+- Query/Retrieve SCP
+- Storage Commitment SCP
+
+### Initial Configuration
+Configure core service behavior during installation:
+```bash
+# Disable Storage SCU
+DICOMCapacitorService.exe --install --no-storage-scu
+
+# Disable Worklist SCU
+DICOMCapacitorService.exe --install --no-worklist-scu
+
+# Disable file preparation
+DICOMCapacitorService.exe --install --no-prepare
+```
+
+## Development Mode
+Run in interactive console mode for testing:
+1. Launch without installation flags
+2. Service runs with console output
+3. Press any key to terminate
+
+## Logging
+- Service logs: `[LogPath]/capacitor_service.log`
+- Audit logs: `[LogPath]/capacitor_service_audit.log`
+
+## Service Status Monitoring
+Monitor service health through:
+- Windows Event Viewer
+- Service status in Windows Services
+- Log files in configured log directory
+
+
 ## Docker Installation
 
 Refer to the [Docker Operations](/dicom-capacitor/docker) page for instructions on how to run DICOM Capacitor in a Docker container.
