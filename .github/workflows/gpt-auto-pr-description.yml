@@ -12,6 +12,6 @@ jobs:
         uses: fluxinc/gpt-auto-pr-description-action@master
         with:
           trigger-word: "ai-draft"
-          github-token: ${{ secrets.TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           pr-number: ${{ github.event.pull_request.number }}
           openai-token: ${{ secrets.OPENAI_API_KEY }}
