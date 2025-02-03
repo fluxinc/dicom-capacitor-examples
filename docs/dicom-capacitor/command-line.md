@@ -5,11 +5,10 @@
 DICOMCapacitorService.exe [options]
 ```
 
-## Installation Options
-- `--install`, `-i`: Install as Windows service
+## Service Options
 - `--uninstall`, `-u`: Remove Windows service
 - `--restart-service [PID]`, `-rs [PID]`: Restart service using process ID
-- `--path`: Sets the path to the configuration files (default: `%ProgramData%\Flux\DICOM Capacitor\`)
+- `--path`: Sets the path to the configuration files (default: `%ProgramData%\Flux Inc\DICOM Capacitor\`)
 
 ## Configuration Options
 - `--activation-code [CODE]`, `-a [CODE]`: Set product activation code
@@ -26,16 +25,6 @@ DICOMCapacitorService.exe [options]
 - `--quit`, `-q`: Exit after running commands
 
 ## Examples
-
-### Basic Installation
-```bash
-DICOMCapacitorService.exe --install
-```
-
-### Custom Installation
-```bash
-DICOMCapacitorService.exe --install --path "D:\DICOM" --no-storage-scu --save-config
-```
 
 ### Set Activation
 ```bash
