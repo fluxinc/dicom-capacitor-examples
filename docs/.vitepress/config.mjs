@@ -29,7 +29,7 @@ export default defineConfig({
               { text: "Overview", link: "/dicom-capacitor/overview" },
               { text: "Installation", link: "/dicom-capacitor/installation" },
               { text: "Docker", link: "/dicom-capacitor/docker" },
-              { text: "Command Line", link: "/dicom-capacitor/command-line" },
+              { text: "Command Line Options", link: "/dicom-capacitor/command-line" },
               {
                 text: "Configuration",
                 link: "/dicom-capacitor/configuration",
